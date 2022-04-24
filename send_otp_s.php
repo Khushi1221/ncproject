@@ -3,9 +3,9 @@ session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 require 'vendor/autoload.php';
-require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\PHPMailer.php'; 
-require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\SMTP.php';  
-require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\Exception.php'; 
+require 'vendor/PHPMailer/phpmailer/src/PHPMailer.php'; 
+require 'vendor/PHPMailer/phpmailer/src/SMTP.php';  
+require 'vendor/PHPMailer/phpmailer/src/Exception.php'; 
 
 $con = new MongoDB\Client('mongodb+srv://khushi:khushi123@cluster-nc.nm1fy.mongodb.net/ncdb?retryWrites=true&w=majority');
 $db = $con->ncdb;
@@ -18,10 +18,11 @@ $email = $_POST['email'];
 $e = ($_POST['email']);
 $_SESSION['em'] = $e;
 $res = $userscoll->findOne(["email" => $_POST['email']]);
+$ress = $sellercoll->findOne(["email" => $_POST['email']]);
 $count = $userscoll->count();
 if($count>0)
 {
-	if($res)
+	if($res and $ress)
 	{
 		
 		if(strcmp($_POST['password2'],$_POST['password3'])==0)
