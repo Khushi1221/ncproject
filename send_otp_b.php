@@ -2,9 +2,9 @@
 session_start();
 
 //use PHPMailer\PHPMailer\PHPMailer;
-require_once('../sendgrid/config.php');
+require_once('sendgrid/config.php');
 require 'vendor/autoload.php';
-require '../sendgrid/vendor/autoload.php';
+require 'sendgrid/vendor/autoload.php';
 //require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\PHPMailer.php'; 
 //require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\SMTP.php';  
 //require 'C:\xampp\htdocs\test\vendor\phpmailer\phpmailer\src\Exception.php'; 
