@@ -64,7 +64,7 @@ function sendOTP($email,$otp)
 		$mail->setFrom('newbiescompanion@mailtrap.io', 'Mailtrap');
 		$mail->addReplyTo('newbiescompanion@mailtrap.io', 'Mailtrap');
 		
-		$message_body = "Your One Time Password is<br><br>".$otp."<br><br>Please do not share it with anyone.<br>For any queries please write to us at newbiescompanion@gmail.com";
+		$message_body = "Your One Time Password is <h3><strong>".$otp."</strong></h3>Please do not share it with anyone.<br><br>For any queries, please write to us at newbiescompanion@gmail.com.";
 		$mail->AddAddress($email);
 		$mail->Subject = "OTP to Reset Password";
 		$mail->MsgHTML($message_body);
